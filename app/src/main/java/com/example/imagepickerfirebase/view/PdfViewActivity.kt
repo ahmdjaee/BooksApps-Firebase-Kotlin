@@ -10,7 +10,7 @@ import com.mindev.mindev_pdfviewer.MindevPDFViewer
 import com.mindev.mindev_pdfviewer.PdfScope
 
 class PdfViewActivity : AppCompatActivity() {
-
+//testtt
     private lateinit var binding : ActivityPdfViewBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
