@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "148298944400",
+    "project_id": "fir-storage-ec09c",
+    "storage_bucket": "fir-storage-ec09c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:148298944400:android:bf35ae2369d7beee8cad15",
+        "android_client_info": {
+          "package_name": "com.example.imagepickerfirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "148298944400-lrvfrcplkmvi5likvoh3ock4i8rnmeks.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBF76-lx4cSrwsccbyGXPAo8MFgQcu5cOU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "148298944400-lrvfrcplkmvi5likvoh3ock4i8rnmeks.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
