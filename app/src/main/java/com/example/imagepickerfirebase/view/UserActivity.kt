@@ -47,36 +47,24 @@ class UserActivity : AppCompatActivity() {
             Log.d("MainActivity", "ImageUrl : $it")
         }
 
+        displayData()
         binding.tvEditProfile.setOnClickListener {
-            galleryLauncher.launch("image/*")
+            galleryLauncher.launch("image/jpeg")
 
         }
-//        val user = Firebase.auth.currentUser
-//        user?.let {
-//            // Name, email address, and profile photo Url
-//            val name = it.displayName
-//            val email = it.email
-//            val photoUrl = it.photoUrl
-//
-//            // Check if user's email is verified
-//            val emailVerified = it.isEmailVerified
-//
-//            // The user's ID, unique to the Firebase project. Do NOT use this value to
-//            // authenticate with your backend server, if you have one. Use
-//            // FirebaseUser.getIdToken() instead.
-//            val uid = it.uid
-//
-//            binding.tvEmail.setText(name.toString())
-//            binding.tvEmail.setText(email.toString())
-//            binding.tvEmail.setText(email.toString())
-//        }
-//
-//        val ONE_MEGABYTE: Long = 1024 * 1024
-//        islandRef.getBytes(ONE_MEGABYTE).addOnSuccessListener {
-//            // Data for "images/island.jpg" is returned, use this as needed
-//        }.addOnFailureListener {
-//            // Handle any errors
-//        }
+
+
+
+    }
+    private fun displayData(){
+        val user = Firebase.auth.currentUser
+        user?.let {
+            val email = it.email
+            val uid = it.uid
+
+            binding.tvName.setText(uid)
+            binding.tvEmail.setText(email)
+        }
     }
     private fun uploadImageUri(){
         // Get the data from an ImageView as bytes

@@ -1,4 +1,4 @@
-package com.example.imagepickerfirebase
+package com.example.imagepickerfirebase.view
 
 import android.content.ContentValues.TAG
 import android.content.Intent

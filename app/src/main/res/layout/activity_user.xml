@@ -53,7 +53,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="24dp"
                 android:background="@drawable/border"
-                android:text="TextView"
+                android:text="User id"
                 android:textAlignment="center" />
 
             <TextView
@@ -64,7 +64,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="24dp"
                 android:background="@drawable/border"
-                android:text="email"
+                android:text="Email"
                 android:textAlignment="center" />
 
             <TextView
@@ -75,7 +75,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="24dp"
                 android:background="@drawable/border"
-                android:text="TextView"
+                android:text="No Telephone"
                 android:textAlignment="center" />
         </LinearLayout>
 

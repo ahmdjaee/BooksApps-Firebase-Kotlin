@@ -1,4 +1,4 @@
-package com.example.imagepickerfirebase
+package com.example.imagepickerfirebase.view
 
 import android.content.ContentValues.TAG
 import android.content.Intent
@@ -25,20 +25,23 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnLogin.setOnClickListener {
-//            var email = binding.etEmail.text.toString()
-//            var password = binding.etPassword.text.toString()
-//
-//            if (email.isEmpty() && password.isEmpty()) {
-//                binding.etEmail.error = "Email harus diisi"
-//                binding.etPassword.error = "Password harus diisi"
-//            } else {
-//                signInActivity(email, password)
-//            }
-            startActivity(Intent(this, MainActivity::class.java))
+            var email = binding.etEmail.text.toString()
+            var password = binding.etPassword.text.toString()
+
+            if (email.isEmpty() && password.isEmpty()) {
+                binding.etEmail.error = "Email harus diisi"
+                binding.etPassword.error = "Password harus diisi"
+            } else {
+                signInActivity(email, password)
+            }
+//            startActivity(Intent(this, MainActivity::class.java))
         }
 
         binding.tvToRegister.setOnClickListener {
             startActivity(Intent(this, RegisterActivity::class.java))
+        }
+        binding.btnBypass.setOnClickListener {
+            startActivity(Intent(this, HomeActivity::class.java))
         }
 
     }
@@ -49,7 +52,7 @@ class LoginActivity : AppCompatActivity() {
                 if (task.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
                     Log.d(TAG, "signInWithEmail:success")
-                    startActivity(Intent(this, MainActivity::class.java))
+                    startActivity(Intent(this, HomeActivity::class.java))
                     finish()
                     Toast.makeText(
                         baseContext,
