@@ -30,8 +30,8 @@ class RegisterActivity : AppCompatActivity() {
         }
 
         binding.btnRegister.setOnClickListener {
-            var email = binding.etEmailRegister?.text.toString()
-            var password = binding.etPasswordRegister?.text.toString()
+            var email = binding.etEmailRegister.text.toString()
+            var password = binding.etPasswordRegister.text.toString()
 
             if (email.isEmpty() && password.isEmpty()) {
                 binding.etEmailRegister.error = "Email harus diisi"

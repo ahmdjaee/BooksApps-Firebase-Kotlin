@@ -30,12 +30,12 @@ class PdfViewActivity : AppCompatActivity() {
         storage = Firebase.storage
         val storageRef = storage.reference
 
-        val pdfUri = intent.getStringExtra("filePdf")
+        val pdfUri = intent.getStringExtra("booksUrl")
 
         pdfRef = storageRef.child("$pdfUri")
         Log.d("uri", "ini adalah pdfUri $pdfUri")
 
-        storageRef.child("File/$pdfUri").downloadUrl.addOnSuccessListener {
+        storageRef.child("$pdfUri").downloadUrl.addOnSuccessListener {
             // Got the download URL for 'users/me/profile.png'
             url = it
             binding.pdf.initializePDFDownloader("$url", statusListener)
@@ -45,6 +45,7 @@ class PdfViewActivity : AppCompatActivity() {
         }.addOnFailureListener {
             // Handle any errors
         }
+
 
 
     }

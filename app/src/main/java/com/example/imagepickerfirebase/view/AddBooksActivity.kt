@@ -45,11 +45,6 @@ class AddBooksActivity : AppCompatActivity() {
             openFile()
         }
 
-        binding.cardView.setOnClickListener {
-            val intent = Intent(this, PdfViewActivity::class.java)
-            intent.putExtra("filePdf", pdfUri?.lastPathSegment)
-            startActivity(intent)
-        }
         binding.btnSaveData.setOnClickListener {
 
             createBooksData()
