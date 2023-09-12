@@ -16,7 +16,7 @@ import com.mindev.mindev_pdfviewer.MindevPDFViewer
 import com.mindev.mindev_pdfviewer.PdfScope
 
 class PdfViewActivity : AppCompatActivity() {
-//testtt
+
     private lateinit var binding : ActivityPdfViewBinding
     private lateinit var pdfRef : StorageReference
     private lateinit var storage : FirebaseStorage
@@ -40,14 +40,11 @@ class PdfViewActivity : AppCompatActivity() {
             url = it
             binding.pdf.initializePDFDownloader("$url", statusListener)
             lifecycle.addObserver(PdfScope())
-            Toast.makeText(baseContext, "Pdf Berhasil Di Unduh", Toast.LENGTH_SHORT).show()
+            Toast.makeText(baseContext, "Buku anda akan segera dimuat", Toast.LENGTH_SHORT).show()
 
         }.addOnFailureListener {
             // Handle any errors
         }
-
-
-
     }
 
     private val statusListener = object : MindevPDFViewer.MindevViewerStatusListener {

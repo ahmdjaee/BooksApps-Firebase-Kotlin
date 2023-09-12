@@ -57,25 +57,18 @@ class AddBooksActivity : AppCompatActivity() {
         val title = binding.etTitle.text.toString()
         val author = binding.etAuthor.text.toString()
         val books = Books(id, title, author, "File/${pdfUri?.lastPathSegment}")
-        if (title.isEmpty() && author.isEmpty() && binding.btnAddPdf == null){
-            binding.etTitle.error = "Title Required"
-            binding.etAuthor.error = "Author Required"
-            binding.btnAddPdf.error = "Books File Required"
-        }else if (title.isNotEmpty() && author.isNotEmpty() &&  pdfUri != null){
-            database.child("Books").child("$id").setValue(books)
-                .addOnCompleteListener {
-                    // Clear Teks jika data berhasil di upload
-                    binding.etTitle.text?.clear()
-                    binding.etAuthor.text?.clear()
-                    binding.btnAddPdf.setText("Insert Your File Here")
-                    uploadPdf()
-                }
-        }else{
+        if (title.isNotEmpty() && author.isNotEmpty() && pdfUri != null) {
+            database.child("Books").child("$id").setValue(books).addOnCompleteListener {
+                // Clear Teks jika data berhasil di upload
+                binding.etTitle.text?.clear()
+                binding.etAuthor.text?.clear()
+                binding.btnAddPdf.setText("Insert Your File Here")
+                uploadPdf()
+                startActivity(Intent(this, HomeActivity::class.java))
+            }
+        } else {
             Toast.makeText(baseContext, "Data Harus Lengkap", Toast.LENGTH_SHORT).show()
         }
-
-
-
 
     }
 
@@ -125,6 +118,5 @@ class AddBooksActivity : AppCompatActivity() {
         }
 
     }
-
 
 }

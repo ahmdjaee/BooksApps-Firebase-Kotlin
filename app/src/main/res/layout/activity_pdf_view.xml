@@ -26,9 +26,10 @@
 
     <ProgressBar
         android:id="@+id/pb_loading"
-        android:layout_centerInParent="true"
+        style="@android:style/Widget.DeviceDefault.Light.ProgressBar.Large"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
 
 
 </RelativeLayout>

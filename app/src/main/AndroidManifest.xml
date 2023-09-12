@@ -15,7 +15,7 @@
         android:theme="@style/Theme.ImagePickerFirebase"
         tools:targetApi="31">
         <activity
-            android:name=".view.SplashScreen"
+            android:name=".view.LoginActivity"
             android:exported="false" />
         <activity
             android:name=".view.HomeActivity"
@@ -35,7 +35,7 @@
             android:name=".view.AddBooksActivity"
             android:exported="false" />
         <activity
-            android:name=".view.LoginActivity"
+            android:name=".view.SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

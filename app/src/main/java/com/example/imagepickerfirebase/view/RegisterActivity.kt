@@ -30,14 +30,17 @@ class RegisterActivity : AppCompatActivity() {
         }
 
         binding.btnRegister.setOnClickListener {
-            var email = binding.etEmailRegister.text.toString()
-            var password = binding.etPasswordRegister.text.toString()
+            val email = binding.etEmailRegister.text.toString()
+            val password = binding.etPasswordRegister.text.toString()
+            val cPassword = binding.etConfirmPassword.text.toString()
 
-            if (email.isEmpty() && password.isEmpty()) {
+            if (email.isEmpty() && password.isEmpty() && cPassword.isEmpty()) {
                 binding.etEmailRegister.error = "Email harus diisi"
                 binding.etPasswordRegister.error = "Password harus diisi"
-
-            } else {
+                binding.etConfirmPassword.error = "Password harus diisi"
+            }else if (password != cPassword){
+               Toast.makeText(baseContext, "Password yang anda masukkan tidak sama", Toast.LENGTH_SHORT).show()
+            }else {
                 createRegister(email, password)
             }
 
